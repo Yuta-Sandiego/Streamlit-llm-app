@@ -13,9 +13,9 @@ def get_llm_response(user_input: str, expert_type: str) -> str:
     try:
         api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
         if not api_key or api_key == "your-openai-api-key-here":
-            return "❌ エラー: OpenAI APIキーが設定されていません。\n\n📝 設定方法:\n1. `.streamlit/secrets.toml` ファイルを開く\n2. `OPENAI_API_KEY = \"sk-your-actual-api-key-here\"` の部分を実際のAPIキーに置き換える\n3. アプリを再起動する"
+            return "❌ エラー: OpenAI APIキーが設定されていません。\n\nStreamlit Community Cloudのデプロイ設定でSecretsを設定してください。"
     except Exception as e:
-        return f"❌ エラー: Streamlitのシークレット設定に問題があります。\n\n詳細: {str(e)}\n\n📝 `.streamlit/secrets.toml` ファイルが正しく設定されているか確認してください。"
+        return f"❌ エラー: Streamlitのシークレット設定に問題があります。\n\nStreamlit Community Cloudのデプロイ設定で以下をSecretsに追加してください：\n\n[api_keys]\nOPENAI_API_KEY = \"sk-your-actual-api-key\""
     
     system_prompts = {
         "経済アナリスト": "あなたは世界経済と金融市場に詳しい経済アナリストです。データや市場動向を根拠に、分かりやすく説明してください。",

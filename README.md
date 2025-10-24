@@ -3,7 +3,9 @@
 LangChainとStreamlitを使用した、専門家の視点でLLMが応答するチャットアプリです。
 
 ## 🌐 デプロイ済みアプリ
-> **注意**: デプロイには適切なAPIキー設定が必要です。詳細は[DEPLOY.md](DEPLOY.md)を参照してください。
+> **デプロイ手順**: [DEPLOY_GUIDE.md](DEPLOY_GUIDE.md)を参照してStreamlit Community Cloudでデプロイしてください。
+> 
+> **重要**: デプロイ時はStreamlit Community CloudのSecrets機能でAPIキーを設定する必要があります。
 
 ## 🚀 機能
 
