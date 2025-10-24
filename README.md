@@ -2,12 +2,16 @@
 
 LangChainとStreamlitを使用した、専門家の視点でLLMが応答するチャットアプリです。
 
+## 🌐 デプロイ済みアプリ
+> **注意**: デプロイには適切なAPIキー設定が必要です。詳細は[DEPLOY.md](DEPLOY.md)を参照してください。
+
 ## 🚀 機能
 
 - **専門家モード選択**: 経済アナリスト、ソフトウェアエンジニア、心理カウンセラーの3つの専門家から選択可能
 - **LangChain統合**: ChatOpenAIを使用してLLMと連携
 - **安全なAPIキー管理**: Streamlitのシークレット機能でAPIキーを安全に管理
 - **ユーザーフレンドリーUI**: 直感的なStreamlitインターフェース
+- **クラウドデプロイ対応**: Streamlit Community Cloudでの簡単デプロイ
 
 ## 📋 必要要件
 
@@ -15,7 +19,7 @@ LangChainとStreamlitを使用した、専門家の視点でLLMが応答する�
 - OpenAI APIキー
 - インターネット接続
 
-## 🛠️ セットアップ
+## 🛠️ ローカル開発セットアップ
 
 ### 1. 仮想環境の設定
 
@@ -91,6 +95,28 @@ Streamlit-llm-app/
 ### アプリが起動しない
 - ポート8501が使用中でないか確認
 - Streamlitの最新版を使用しているか確認
+
+## 🌐 Streamlit Community Cloud デプロイ
+
+このアプリはStreamlit Community Cloudで簡単にデプロイできます。
+
+### デプロイ手順
+1. [Streamlit Community Cloud](https://share.streamlit.io/) にアクセス
+2. GitHubアカウントでサインイン
+3. 「New app」を作成
+4. このリポジトリを選択
+5. **重要**: Advanced settings の Secrets に以下を設定：
+```toml
+[api_keys]
+OPENAI_API_KEY = "sk-your-actual-openai-api-key-here"
+```
+
+詳細な手順は [DEPLOY.md](DEPLOY.md) を参照してください。
+
+### ⚠️ セキュリティ注意事項
+- `.env`ファイルは絶対にGitHubにアップロードしないでください
+- APIキーは必ずStreamlit Community Cloudのシークレット機能で設定してください
+- パブリックリポジトリには機密情報を含めないでください
 
 ## 📝 ライセンス
 
